@@ -3,7 +3,7 @@
 //Assigniation
 
 //Ultrason
-const int siganlPin = 2; //Broche de l'Ultrason
+const int signalPin = 2; //Broche de l'Ultrason
 
 // LED Bar
 const int clockPin = 4;
@@ -29,15 +29,15 @@ void setup()
 void loop()
 {
   //Signal
-  pinMode(siganlPin, OUTPUT);
-  digitalWrite(siganlPin, LOW); //Initialise le signal
+  pinMode(signalPin, OUTPUT);
+  digitalWrite(signalPin, LOW); //Initialise le signal
   delayMicroseconds(2); //Délai
-  digitalWrite(siganlPin, HIGH); //Activer l'impulsion du signal
+  digitalWrite(signalPin, HIGH); //Activer l'impulsion du signal
   delayMicroseconds(5); //Délai
-  digitalWrite(siganlPin, LOW); //Désactive l'impulsion du signal pour créer une courte impulsion (permet d'avoir un meilleur ping)
+  digitalWrite(signalPin, LOW); //Désactive l'impulsion du signal pour créer une courte impulsion (permet d'avoir un meilleur ping)
   
-  pinMode(siganlPin, INPUT); //Pour pouvoir lire la durée du signal
-  duration = pulseIn(siganlPin, HIGH); //Assigner à la variable
+  pinMode(signalPin, INPUT); //Pour pouvoir lire la durée du signal
+  duration = pulseIn(signalPin, HIGH); //Assigner à la variable
 
   if(cm > 20){
     bar.setLevel(0);
