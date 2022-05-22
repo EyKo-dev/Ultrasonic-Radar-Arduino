@@ -1,7 +1,8 @@
-# Radar-Ultrasonic-Led-Bar-Buzzer-
-This is a radar for a robot.
+# Ultrasonic radar + Led Bar + Buzzer for Arduino.
+This is a ultrasonic radar for a robot.
 
-Material :
+
+### **Component used :**
 
 - Arduino Uno
 - Grove Ulstrasonic Distance Sensor v2.0
