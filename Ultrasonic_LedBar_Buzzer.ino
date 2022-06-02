@@ -3,7 +3,7 @@
 //Assigniation
 
 //Ultrason
-const int siganlPin = 2;
+const int signalPin = 2;
 
 // LED Bar
 const int clockPin = 4;
@@ -29,16 +29,17 @@ void setup()
 void loop()
 {
   //Signal
-  pinMode(siganlPin, OUTPUT);
-  digitalWrite(siganlPin, LOW);
+  pinMode(signalPin, OUTPUT);
+  digitalWrite(signalPin, LOW);
   delayMicroseconds(2); //Délai
-  digitalWrite(siganlPin, HIGH);
+  digitalWrite(signalPin, HIGH);
   delayMicroseconds(5); //Délai
-  digitalWrite(siganlPin, LOW);
+  digitalWrite(signalPin, LOW);
   
-  pinMode(siganlPin, INPUT);
-  duration = pulseIn(siganlPin, HIGH);
-
+  pinMode(signalPin, INPUT);
+  duration = pulseIn(signalPin, HIGH);
+  cm = duration / 29 / 2;
+  
   if(cm > 20){
     bar.setLevel(0);
   }
@@ -117,8 +118,6 @@ void loop()
   else {
     bar.setLed(1, 0);
   }
-
-    cm = duration / 29 / 2;
 
   if(cm <= 20 && cm > 2){
     //Fais un bip 
